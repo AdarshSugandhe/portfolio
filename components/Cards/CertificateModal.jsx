@@ -82,7 +82,7 @@ const CertificateModal = ({ imgUrl }) => {
               <Image
                 src={imgUrl}
                 alt="Certificate"
-                width={600}
+                width={650}
                 height={400}
                 style={{ maxWidth: "100%", height: "auto" }}
               />

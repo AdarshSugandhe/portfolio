@@ -46,7 +46,8 @@ const FixedMenu = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
             tranisition={{ duration: 0.2 }}
-            className="relative w-full max-w-md md:max-w-none h-[400px] bottom-[28rem] xl:bottom-[24.6rem] px-4 pointer-events-auto"
+            className="fixed bottom-24 -translate-x-1/2 w-full max-w-md md:max-w-none h-[400px] px-4 pointer-events-auto landscape:bottom-5"
+
           >
             <div className="bg-black w-full h-full shadow-custom max-w-[1170px] mx-auto py-12 xl:py-12 xl:px-32 flex items-center lg:gap-12 rounded-lg">
               <Nav

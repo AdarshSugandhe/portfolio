@@ -58,7 +58,7 @@ const About = () => {
           </p>
 
           <Link
-            href="/Adarsh_Sugandhe Resume.pdf"
+            href="https://drive.google.com/file/d/1DpXRLxpZxPubkpjXQgf51p6bkuOGdirA/view?usp=sharing"
             target="_blank"
             className="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-cyan-400 text-cyan-400 font-medium text-xs hover:bg-cyan-400 hover:text-black transition-all duration-500 shadow-md hover:shadow-lg hover:shadow-cyan-500/70 group"
           >

@@ -27,7 +27,6 @@ const Nav = ({
               activeClass="active"
               to={link.name}
               smooth
-              offset={-420}
               className={linkStyles}
             >
               <p onClick={() => onClickShowMenu(false)}>{link.name}</p>

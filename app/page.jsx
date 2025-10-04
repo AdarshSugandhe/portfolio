@@ -10,6 +10,7 @@ import Journey from "@/components/Journey";
 import Services from "@/components/Services";
 import Work from "@/components/Work/Work";
 import WorkSection from "@/components/Work/WorkSection";
+import HorizontalScrollPage from "@/components/HorizontalScrollPage";
 
 const Home = () => {
   useEffect(() => {
@@ -29,6 +30,7 @@ const Home = () => {
       <WorkSection />
       <About />
       <Journey />
+      <HorizontalScrollPage />
       <Contact />
       <Footer />
     </>

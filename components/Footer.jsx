@@ -9,7 +9,7 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className="py-12 bg-primary px-2 md:px-4 border-t border-gray-600">
+    <footer className="py-12 bg-neutral-950 px-2 md:px-4 border-t border-gray-600">
       <div className="container mx-auto">
         <div className="flex items-start flex-col md:flex-row sm:justify-between">
           <Logo light={true} />

@@ -7,8 +7,10 @@ import { FiArrowRight } from "react-icons/fi";
 import { motion } from "framer-motion";
 import AnimatedText from "../AnimatedText";
 import Link from "next/link";
+import { useState } from "react";
 
 const WorkSection = () => {
+  const [visibleItems, setVisibleItems] = useState(5);
   const settings = {
     dots: true,
     infinite: true,
@@ -40,7 +42,7 @@ const WorkSection = () => {
         textStyles="h2 md:text-5xl font-bold py-12 text-left px-4 container text-accent"
       />
 
-      {projectsData.map((work, idx) => (
+      {projectsData.slice(0, visibleItems).map((work, idx) => (
         <div
           key={idx}
           className={`min-h-[700px] flex items-center justify-center mx-2 md:mx-4`}
@@ -132,6 +134,17 @@ const WorkSection = () => {
           </div>
         </div>
       ))}
+      {visibleItems < projectsData.length && (
+        <div className="flex justify-center mt-12">
+          <button
+            onClick={() => setVisibleItems((prev) => prev + 5)}
+            className="px-6 py-3 rounded-lg bg-gradient-to-r from-accent to-purple-600 text-white font-semibold shadow-lg flex items-center gap-2 transition-all duration-300 ease-in-out hover:bg-gradient-to-l hover:from-purple-600 hover:to-accent hover:scale-105"
+          >
+            <FiArrowRight className="transition-transform duration-300 ease-in-out group-hover:translate-x-1" />
+            Load More
+          </button>
+        </div>
+      )}
     </section>
   );
 };

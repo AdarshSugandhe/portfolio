@@ -67,7 +67,9 @@ const Card = (props) => {
                     ? name
                     : null}
                 </h3>
-                <p className="text-base max-w-[660px]">{description}</p>
+                <p className="text-sm md:text-base max-w-[660px]">
+                  {description}
+                </p>
                 {certificate && <CertificateModal imgUrl={certificate} />}
               </div>
             </div>

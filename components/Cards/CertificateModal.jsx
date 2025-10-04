@@ -44,12 +44,13 @@ const CertificateModal = ({ imgUrl }) => {
               top: "50%",
               left: "50%",
               transform: "translate(-50%, -50%)",
-              width: { xs: "90%", sm: 600, md: 700 },
+              width: { xs: "95%", sm: 600, md: 700 },
               bgcolor: "#121212",
               borderRadius: 2,
               boxShadow: 24,
               p: 4,
               outline: "none",
+              padding: 2.5,
               position: "relative",
               display: "flex",
               flexDirection: "column",
@@ -84,7 +85,7 @@ const CertificateModal = ({ imgUrl }) => {
                 alt="Certificate"
                 width={650}
                 height={400}
-                style={{ maxWidth: "100%", height: "auto" }}
+                style={{ maxWidth: "100%", height: "auto", borderRadius: "8px" }}
               />
             </Box>
           </Box>

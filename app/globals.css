@@ -11,6 +11,10 @@
   font-family: "Inter Tight", sans-serif;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   background-color: black;
 }

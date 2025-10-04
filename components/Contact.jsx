@@ -59,7 +59,7 @@ const Contact = () => {
 
   return (
     <section
-      className="pt-8 xl:pt-12 pb-32 px-2 md:px-4 bg-[#171717]"
+      className="pt-8 xl:pt-12 pb-32 px-2 md:px-4 bg-neutral-950"
       id="contact"
     >
       <div className="container mx-auto">
@@ -74,7 +74,7 @@ const Contact = () => {
               initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              viewport={{ once: false, amount: 0.6 }}
+              viewport={{ once: true, amount: 0.6 }}
               onSubmit={handleFormSubmit}
               className="flex flex-col gap-6 w-full max-w-[480px]"
             >
@@ -93,7 +93,7 @@ const Contact = () => {
                     id="firstname"
                     name="firstname"
                     value={formData.firstname}
-                    className="input bg-[#171717]"
+                    className="input bg-neutral-950"
                     placeholder="First Name"
                     required
                   />
@@ -113,7 +113,7 @@ const Contact = () => {
                     id="lastname"
                     name="lastname"
                     value={formData.lastname}
-                    className="input bg-[#171717]"
+                    className="input bg-neutral-950"
                     placeholder="Last Name"
                     required
                   />
@@ -134,7 +134,7 @@ const Contact = () => {
                   id="email"
                   name="email"
                   value={formData.email}
-                  className="input bg-[#171717]"
+                  className="input bg-neutral-950"
                   placeholder="youremail@gmail.com"
                   required
                 />
@@ -160,7 +160,7 @@ const Contact = () => {
                   id="phone"
                   name="phone"
                   value={formData.phone}
-                  className="input bg-[#171717]"
+                  className="input bg-neutral-950"
                   placeholder="+91 000-000-0000"
                 />
               </div>
@@ -178,7 +178,7 @@ const Contact = () => {
                   id="message"
                   name="message"
                   value={formData.message}
-                  className="textarea bg-[#171717]"
+                  className="textarea bg-neutral-950"
                   placeholder="Leave me a message..."
                   rows="5"
                   required
@@ -230,7 +230,7 @@ const Contact = () => {
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: false, amount: 0.6 }}
+            viewport={{ once: true, amount: 0.7 }}
           >
             <Image
               src="/assets/contact/img.png"

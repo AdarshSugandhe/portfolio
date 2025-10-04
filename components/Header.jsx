@@ -14,8 +14,7 @@ const Header = () => {
             <Nav
               containerStyles="hidden xl:flex"
               listStyles="flex gap-6"
-              linkStyles="text-primary font-primary tracking-[1.4px] transition-all duration-300 cursor-pointer uppercase font-bold"
-              spy={true}
+              linkStyles="text-primary font-primary tracking-[1.4px] transition-all duration-200 cursor-pointer uppercase font-bold hover:scale-105 text-lg"
             />
             <Socials
               containerStyles="flex items-center gap-2"

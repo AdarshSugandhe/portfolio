@@ -3,7 +3,7 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Card from "./Card";
 import { AnimatePresence, motion } from "framer-motion";
-import { journey } from "@/lib/data";
+import { journey } from "@/lib/journeyData";
 
 const Cards = () => {
   return (

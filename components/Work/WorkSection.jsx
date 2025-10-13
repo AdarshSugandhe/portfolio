@@ -2,12 +2,13 @@
 
 import Image from "next/image";
 import Slider from "react-slick";
-import { projectsData } from "@/lib/data";
 import { FiArrowRight } from "react-icons/fi";
 import { motion } from "framer-motion";
 import AnimatedText from "../AnimatedText";
 import Link from "next/link";
 import { useState } from "react";
+import { FaGithub } from "react-icons/fa";
+import { projectsData } from "@/lib/projectsData";
 
 const WorkSection = () => {
   const [visibleItems, setVisibleItems] = useState(5);
@@ -121,14 +122,26 @@ const WorkSection = () => {
                     </span>
                   ))}
                 </div>
-                <Link
-                  href={work.href}
-                  target="_blank"
-                  className="text-xs inline-flex items-center gap-1 group pt-3"
-                >
-                  VIEW WEBSITE{" "}
-                  <FiArrowRight className="-rotate-45 group-hover:scale-[1.3] transition-all duration-300" />
-                </Link>
+                <div className="flex gap-3">
+                  <Link
+                    href={work.href}
+                    target="_blank"
+                    className="text-xs inline-flex items-center gap-1 group pt-3"
+                  >
+                    VIEW WEBSITE{" "}
+                    <FiArrowRight className="-rotate-45 group-hover:scale-[1.3] transition-all duration-300" />
+                  </Link>
+                  {work.githubUrl && (
+                    <Link
+                      href={work.githubUrl}
+                      target="_blank"
+                      className="text-xs inline-flex items-center gap-1 group pt-3"
+                    >
+                      GitHub{" "}
+                      <FaGithub className="group-hover:scale-[1.1] transition-all duration-300" />
+                    </Link>
+                  )}
+                </div>
               </motion.div>
             </div>
           </div>

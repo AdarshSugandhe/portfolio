@@ -4,11 +4,11 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@radix-ui/react-tabs";
 
 import AnimatedText from "../AnimatedText";
 import WorkItem from "./WorkItem";
-import { data } from "@/lib/data";
+import { projectsDataPrev } from "@/lib/data";
 
 const Work = () => {
   const uniqueCategories = Array.from(
-    new Set(data.map((item) => item.category))
+    new Set(projectsDataPrev.map((item) => item.category))
   );
 
   const tabData = [
@@ -21,8 +21,8 @@ const Work = () => {
 
   const filterWork =
     tabValue === "all"
-      ? data.filter((item) => item.category !== "all")
-      : data.filter((item) => item.category === tabValue);
+      ? projectsDataPrev.filter((item) => item.category !== "all")
+      : projectsDataPrev.filter((item) => item.category === tabValue);
 
   const loadMoreItems = () => {
     setVisibleItems((prev) => prev + 3);

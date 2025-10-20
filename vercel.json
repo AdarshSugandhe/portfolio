@@ -1,0 +1,8 @@
+{
+  "version": 2,
+  "framework": "nextjs",
+  "outputDirectory": ".vercel/output",
+  "buildCommand": "npm run build",
+  "installCommand": "npm install",
+  "regions": ["iad1"]
+}

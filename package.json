@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "postinstall": "npx next telemetry disable"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",

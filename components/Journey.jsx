@@ -1,14 +1,11 @@
-import AnimatedText from "./AnimatedText";
 import Cards from "./Cards/Cards";
+import Heading from "./Heading";
 
 const Journey = () => {
   return (
     <section id="journey" className="bg-black px-2 md:px-4 pt-10">
       <div className="container mx-auto">
-        <AnimatedText
-          text="My Professional Journey"
-          textStyles="h2 mb-12 font-bold text-center text-left text-accent md:text-5xl"
-        />
+        <Heading heading="MY PROFESSIONAL JOURNEY" styles="h2 font-bold text-center text-white text-6xl md:text-8xl" />
         <Cards />
       </div>
     </section>

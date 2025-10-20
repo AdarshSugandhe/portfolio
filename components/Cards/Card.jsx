@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import { useEffect, useLayoutEffect, useRef } from "react";
+import gsap from "gsap";
 import CertificateModal from "./CertificateModal";
 
 const Card = (props) => {
@@ -18,8 +20,35 @@ const Card = (props) => {
     icon,
   } = props;
 
+  const cardRef = useRef(null);
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        cardRef.current,
+        { opacity: 0, y: 50, scale: 0.97 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.7,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: cardRef.current,
+            start: "top 85%",
+          },
+        }
+      );
+    }, cardRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <div className="w-full h-[300px] overflow-hidden flex items-center sticky top-12">
+    <div
+      className="w-full h-[300px] overflow-hidden flex items-center sticky top-12"
+      ref={cardRef}
+    >
       <div className="w-full h-[270px] rounded-[12px] border border-transparent bg-gradient-to-br from-[#2c2c3e] via-[#3a3a52] to-[#2c2c3e] text-white shadow-lg">
         <div className="flex flex-col h-full">
           {/* Header */}

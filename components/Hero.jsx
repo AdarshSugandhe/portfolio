@@ -54,7 +54,7 @@ const Hero = () => {
               quality="100"
               priority
               className="object-cover"
-              alt=""
+              alt="Profile picture"
             />
           </div>
           <div
@@ -80,7 +80,7 @@ const Hero = () => {
                   src="assets/hero/shape-1.svg"
                   width={38}
                   height={38}
-                  alt=""
+                  alt="shape-1"
                 />
               }
               direction="left"
@@ -98,7 +98,7 @@ const Hero = () => {
                   src="assets/hero/shape-3.svg"
                   width={36}
                   height={36}
-                  alt=""
+                  alt="shape-2"
                 />
               }
               direction="left"
@@ -116,12 +116,72 @@ const Hero = () => {
                   src="assets/hero/shape-2.svg"
                   width={38}
                   height={38}
-                  alt=""
+                  alt="shape-3"
                 />
               }
               direction="right"
               duration={5}
             />
+          </div>
+
+          <div className="absolute bottom-0 right-20">
+            <ScrollLink to="work" smooth className="cursor-pointer">
+              <div className="flex items-center">
+                <p className="font-semibold text-gray-700 text-xl">
+                  Scroll Down
+                </p>
+                <svg
+                  width="50"
+                  height="50"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="none"
+                  strokeWidth="1.5"
+                  className="relative pb-2"
+                >
+                  <path d="M6 9l6 6 6-6"></path>
+                  <path d="M6 15l6 6 6-6"></path>
+                  <defs>
+                    <linearGradient id="shine" x1="0" y1="0" x2="0" y2="1">
+                      <stop
+                        offset="50%"
+                        stopColor="white"
+                        stopOpacity="0.9"
+                      ></stop>
+                    </linearGradient>
+                    <mask id="shine-mask">
+                      <rect
+                        x="0"
+                        y="0"
+                        width="100%"
+                        height="100%"
+                        fill="url(#shine)"
+                      >
+                        <animateTransform
+                          attributeName="transform"
+                          type="translate"
+                          values="0 -40; 0 40"
+                          dur="2s"
+                          repeatCount="indefinite"
+                        ></animateTransform>
+                      </rect>
+                    </mask>
+                  </defs>
+                  <g mask="url(#shine-mask)">
+                    <path
+                      d="M6 9l6 6 6-6"
+                      stroke="#cfa355"
+                      strokeWidth="2"
+                    ></path>
+                    <path
+                      d="M6 15l6 6 6-6"
+                      stroke="#cfa355"
+                      strokeWidth="2"
+                    ></path>
+                  </g>
+                </svg>
+              </div>
+            </ScrollLink>
           </div>
         </div>
       </div>

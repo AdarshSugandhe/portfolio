@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { CgMenuGridR } from "react-icons/cg";
 import { useMediaQuery } from "react-responsive";
 import { FiMapPin, FiPhoneCall, FiMail } from "react-icons/fi";
+import Link from "next/link";
 
 import Nav from "./Nav";
 import Socials from "./Socials";
@@ -47,7 +48,6 @@ const FixedMenu = () => {
             exit={{ opacity: 0, y: 20 }}
             tranisition={{ duration: 0.2 }}
             className="fixed bottom-24 -translate-x-1/2 w-full max-w-md md:max-w-none h-[400px] px-4 pointer-events-auto landscape:bottom-5"
-
           >
             <div className="bg-black w-full h-full shadow-custom max-w-[1170px] mx-auto py-12 xl:py-12 xl:px-32 flex items-center lg:gap-12 rounded-lg">
               <Nav
@@ -75,7 +75,12 @@ const FixedMenu = () => {
                         <FiPhoneCall />
                       </div>
                       <p className="text-white font-semibold text-lg">Phone</p>
-                      <p className="text-[#afafaf]">+91 8766813577</p>
+                      <Link
+                        href="tel:+91-8766813577"
+                        className="text-[#afafaf]"
+                      >
+                        +91-8766813577
+                      </Link>
                     </div>
 
                     <div className="flex flex-col">
@@ -83,9 +88,12 @@ const FixedMenu = () => {
                         <FiMail />
                       </div>
                       <p className="text-white font-semibold text-lg">Email</p>
-                      <p className="text-[#afafaf]">
+                      <Link
+                        href="mailto:adarshsugandhe2024@gmail.com"
+                        className="text-[#afafaf]"
+                      >
                         adarshsugandhe2024@gmail.com
-                      </p>
+                      </Link>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 mt-2">

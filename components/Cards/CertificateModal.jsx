@@ -16,7 +16,7 @@ const CertificateModal = ({ imgUrl }) => {
       <button
         variant="contained"
         onClick={handleOpen}
-        className="text-xs text-center xl:text-right text-accent pt-3"
+        className="text-xs text-center xl:text-right text-accent pt-3 hover:text-cyan-500 transition-all duration-200 hover:scale-[1.1] hover:font-bold"
       >
         VIEW CERTIFICATE
       </button>
@@ -85,7 +85,11 @@ const CertificateModal = ({ imgUrl }) => {
                 alt="Certificate"
                 width={650}
                 height={400}
-                style={{ maxWidth: "100%", height: "auto", borderRadius: "8px" }}
+                style={{
+                  maxWidth: "100%",
+                  height: "auto",
+                  borderRadius: "8px",
+                }}
               />
             </Box>
           </Box>

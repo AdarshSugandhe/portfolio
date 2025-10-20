@@ -17,6 +17,7 @@ const WorkSection = () => {
   const sectionRef = useRef(null);
 
   useLayoutEffect(() => {
+    if (typeof window === "undefined") return;
     const ctx = gsap.context(() => {
       infoRefs.current.forEach((info) => {
         if (!info) return;

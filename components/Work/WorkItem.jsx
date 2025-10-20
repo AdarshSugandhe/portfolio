@@ -30,6 +30,7 @@ const WorkItem = (props) => {
   };
 
   useLayoutEffect(() => {
+    if (typeof window === "undefined") return;
     const ctx = gsap.context(() => {
       slideRefs.current.forEach((slide) => {
         gsap.fromTo(

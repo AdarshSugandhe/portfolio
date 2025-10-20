@@ -1,4 +1,5 @@
 "use client";
+
 import { horizontalSlider } from "@/lib/data";
 import { useEffect, useRef } from "react";
 
@@ -67,7 +68,7 @@ function HorizontalRow({ row, reverse }) {
 
 const HorizontalScrollPage = () => {
   return (
-    <section className="bg-black overflow-hidden pt-[40px] pb-[40px]">
+    <section className="hidden md:block bg-black overflow-hidden pt-[40px] pb-[40px]">
       <div className="relative h-[calc(100vw/4.3)]">
         <div className="flex flex-col absolute top-0 -left-6 md:-left-12 w-full">
           <HorizontalRow row={horizontalSlider[0]} reverse={false} />

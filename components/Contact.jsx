@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image";
 import { useForm, ValidationError } from "@formspree/react";
 import { FaCheckCircle } from "react-icons/fa";

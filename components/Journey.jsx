@@ -1,3 +1,5 @@
+"use client"
+
 import Cards from "./Cards/Cards";
 import Heading from "./Heading";
 

@@ -8,7 +8,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import Heading from "./Heading";
 
-gsap.registerPlugin(ScrollTrigger);
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 const About = () => {
   const rootRef = useRef(null);
@@ -20,6 +22,7 @@ const About = () => {
   const blobBRef = useRef(null);
 
   useLayoutEffect(() => {
+    if (typeof window === "undefined") return;
     const ctx = gsap.context(() => {
       // Floating blobs background animation
       gsap.to(blobARef.current, {

@@ -3,7 +3,12 @@
 import Image from "next/image";
 import { useEffect, useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
 import CertificateModal from "./CertificateModal";
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 const Card = (props) => {
   const {
@@ -23,6 +28,7 @@ const Card = (props) => {
   const cardRef = useRef(null);
 
   useLayoutEffect(() => {
+    if (typeof window === "undefined") return;
     const ctx = gsap.context(() => {
       gsap.fromTo(
         cardRef.current,

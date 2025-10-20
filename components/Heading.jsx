@@ -2,13 +2,16 @@ import { useEffect, useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 const Heading = ({ heading, styles }) => {
   const headingRef = useRef(null);
   const lineRef = useRef(null);
 
   useLayoutEffect(() => {
+    if (typeof window === "undefined") return;
     const ctx = gsap.context(() => {
       gsap.fromTo(
         headingRef.current,

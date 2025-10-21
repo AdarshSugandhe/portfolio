@@ -1,8 +1,11 @@
 {
   "version": 2,
   "framework": "nextjs",
-  "outputDirectory": ".vercel/output",
   "buildCommand": "npm run build",
   "installCommand": "npm install",
-  "regions": ["iad1"]
+  "outputDirectory": ".next", 
+  "regions": ["iad1"],
+  "rewrites": [
+    { "source": "/_not-found", "destination": "/" }
+  ]
 }

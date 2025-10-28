@@ -74,7 +74,7 @@ const About = () => {
           stagger: 0.12,
           scrollTrigger: {
             trigger: rightRef.current,
-            start: "top 85%",
+            start: "top 90%",
             toggleActions: "play none none none",
           },
         }

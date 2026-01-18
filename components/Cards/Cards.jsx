@@ -10,7 +10,12 @@ const Cards = () => {
     <>
       <Tabs defaultValue="skills" className="w-full flex flex-col items-center">
         <TabsList className="max-w-max mb-[30px]">
-          {/* <TabsTrigger value="experience">Experience</TabsTrigger> */}
+          <TabsTrigger
+            className="text-white data-[state=active]text-white"
+            value="experience"
+          >
+            Experience
+          </TabsTrigger>
           <TabsTrigger
             className="text-white data-[state=active]text-white"
             value="skills"
@@ -24,7 +29,7 @@ const Cards = () => {
             Education
           </TabsTrigger>
         </TabsList>
-        {/* <TabsContent value="experience" className="w-full">
+        <TabsContent value="experience" className="w-full">
           <AnimatePresence>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -39,7 +44,7 @@ const Cards = () => {
                 ))}
             </motion.div>
           </AnimatePresence>
-        </TabsContent> */}
+        </TabsContent>
 
         <TabsContent value="education" className="w-full">
           <AnimatePresence>

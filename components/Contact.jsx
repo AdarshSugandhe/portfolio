@@ -1,11 +1,12 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import { useForm, ValidationError } from "@formspree/react";
 import { FaCheckCircle } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import Heading from "./Heading";
+import Heading from "@/components/Heading";
+import { trackEvent } from "@/lib/analytics";
 
 const Contact = () => {
   const [state, handleSubmit] = useForm("xpwjapvd");
@@ -46,6 +47,7 @@ const Contact = () => {
     e.preventDefault();
     const result = await handleSubmit(e);
     if (result) {
+      trackEvent("submit", "Lead", "Contact Form Submit", 1);
       setShowIcon(true);
       setFormData({
         firstname: "",

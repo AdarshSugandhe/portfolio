@@ -1,6 +1,8 @@
+"use client";
+
 import Link from "next/link";
-import { FaFacebookF, FaGithub, FaLinkedin } from "react-icons/fa";
-import { RiInstagramFill } from "react-icons/ri";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { trackEvent } from "@/lib/analytics";
 
 const socials = [
   { icon: <FaGithub />, path: "https://github.com/AdarshSugandhe" },
@@ -21,6 +23,13 @@ const Socials = ({ containerStyles, iconStyles }) => {
           target="_blank"
           key={index}
           className={iconStyles}
+          onClick={() => {
+            if (item.path.includes("github")) {
+              trackEvent("click", "Social", "GitHub Click", 1);
+            } else if (item.path.includes("linkedin")) {
+              trackEvent("click", "Social", "LinkedIn Click", 1);
+            }
+          }}
         >
           {item.icon}
         </Link>

@@ -2,7 +2,6 @@
 import { useEffect, useRef } from "react";
 import LocomotiveScroll from "locomotive-scroll";
 import "locomotive-scroll/dist/locomotive-scroll.css";
-
 import About from "@/components/About";
 import Contact from "@/components/Contact";
 import FixedMenu from "@/components/FixedMenu";
@@ -11,6 +10,7 @@ import Hero from "@/components/Hero";
 import Journey from "@/components/Journey";
 import WorkSection from "@/components/Work/WorkSection";
 import HorizontalScrollPage from "@/components/HorizontalScrollPage";
+import { trackEvent } from "@/lib/analytics";
 
 const Home = () => {
   const scrollRef = useRef(null);
@@ -24,7 +24,24 @@ const Home = () => {
       tablet: { smooth: true },
     });
 
-    return () => scroll.destroy();
+    let hasTrackedScroll = false;
+    const handleScroll = () => {
+      if (hasTrackedScroll) return;
+      const scrollHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const scrolled = window.scrollY;
+      if (scrollHeight > 0 && scrolled / scrollHeight >= 0.9) {
+        trackEvent("scroll", "Engagement", "Scroll 90%", 1);
+        hasTrackedScroll = true;
+        window.removeEventListener("scroll", handleScroll);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      scroll.destroy();
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (

@@ -7,6 +7,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import Heading from "./Heading";
+import { trackEvent } from "../lib/analytics";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -59,7 +60,7 @@ const About = () => {
             start: "top 85%",
             toggleActions: "play none none none",
           },
-        }
+        },
       );
 
       // Animate heading lines
@@ -77,7 +78,7 @@ const About = () => {
             start: "top 90%",
             toggleActions: "play none none none",
           },
-        }
+        },
       );
 
       // Animate right section content (text + button)
@@ -94,7 +95,7 @@ const About = () => {
             start: "top 85%",
             toggleActions: "play none none none",
           },
-        }
+        },
       );
     }, rootRef);
 
@@ -185,6 +186,9 @@ const About = () => {
                 href="https://drive.google.com/file/d/1DpXRLxpZxPubkpjXQgf51p6bkuOGdirA/view?usp=sharing"
                 target="_blank"
                 ref={resumeBtnRef}
+                onClick={() =>
+                  trackEvent("click", "Engagement", "Resume Click", 1)
+                }
                 className="inline-flex items-center gap-3 px-5 py-3 rounded-xl border border-cyan-400 text-cyan-400 font-medium text-sm hover:bg-cyan-400 hover:text-black transition-all duration-300 shadow-lg"
               >
                 VIEW RESUME

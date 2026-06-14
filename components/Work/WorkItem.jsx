@@ -8,6 +8,7 @@ import { FiArrowRight } from "react-icons/fi";
 import { useEffect, useLayoutEffect, useRef } from "react";
 import { FaGithub } from "react-icons/fa";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { trackEvent } from "../../lib/analytics";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -77,6 +78,7 @@ const WorkItem = (props) => {
                 <a
                   href={work.href}
                   target="_blank"
+                  onClick={() => trackEvent("click", "Portfolio", "Project Visit", 1)}
                   className="block w-full h-full overflow-hidden"
                 >
                   <Image
@@ -127,6 +129,7 @@ const WorkItem = (props) => {
             <Link
               href={work.href}
               target="_blank"
+              onClick={() => trackEvent("click", "Portfolio", "Project Visit", 1)}
               className="text-xs inline-flex items-center gap-1 group"
             >
               VIEW WEBSITE
@@ -136,6 +139,7 @@ const WorkItem = (props) => {
               <Link
                 href={work.githubUrl}
                 target="_blank"
+                onClick={() => trackEvent("click", "Portfolio", "GitHub Click", 1)}
                 className="text-xs inline-flex items-center gap-1 group"
               >
                 GitHub
